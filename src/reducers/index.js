@@ -1,4 +1,5 @@
 import { ADD_FEATURE } from '../actions/index'
+import { DELETE_FEATURE } from '../actions/index'
 
 export const initialState = {
     additionalPrice: 0,
@@ -23,14 +24,23 @@ export const reducer = (state = initialState, action) => {
         console.log("payload on click to ADD FEATURE reducer", action.payload)
       return {
         ...state,
-        // // additionalPrice: state.additionalPrice + action.payload.price,
-        // car:{...state.car,
-        //         features:[...state.car.features, action.payload]
-        //     },
-        // additionalFeatures: [...state.additionalFeatures.filter(item=>item.id !== action.payload.id)]
-        
+        // additionalPrice: state.additionalPrice + action.payload.price,
+        car:{...state.car,
+                price: state.car.price + action.payload.price,
+                features:[...state.car.features, action.payload]
+            },
+        additionalFeatures: [...state.additionalFeatures.filter(item=>item.id !== action.payload.id)]
       };
-      
+      case DELETE_FEATURE:
+        return{
+          ...state,
+          car:{...state.car,
+            price: state.car.price - action.payload.price,
+            features:[...state.car.features.filter(item => {return item.id !== action.payload.id})]},
+            additionalFeatures:[
+              ...state.additionalFeatures, action.payload
+            ]
+        }
       default:
       return state
   }

@@ -4,7 +4,7 @@ import { addFeature } from "../actions/"
 
 
 
-export const AdditionalFeature = props => {
+const AdditionalFeature = props => {
 
   return (
     <li>
@@ -16,14 +16,14 @@ export const AdditionalFeature = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+    
+//   };
+// };
 
 export default connect(
-  mapStateToProps,
+  null,
   { addFeature }
 )(AdditionalFeature);
 
