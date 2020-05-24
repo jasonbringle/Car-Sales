@@ -23,12 +23,14 @@ export const reducer = (state = initialState, action) => {
         console.log("payload on click to ADD FEATURE reducer", action.payload)
       return {
         ...state,
-        additionalPrice: state.additionalPrice + action.payload.price,
-        car:{...state.car,
-                features:[...state.car.features, action.payload]
-            },
-        additionalFeatures: state.additionalFeatures.filter(item=>item.id !== action.payload.id)
+        // // additionalPrice: state.additionalPrice + action.payload.price,
+        // car:{...state.car,
+        //         features:[...state.car.features, action.payload]
+        //     },
+        // additionalFeatures: [...state.additionalFeatures.filter(item=>item.id !== action.payload.id)]
+        
       };
+      
       default:
       return state
   }
