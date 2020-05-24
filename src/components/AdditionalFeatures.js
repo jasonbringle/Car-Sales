@@ -1,5 +1,5 @@
 import React from 'react';
-import {AdditionalFeature} from './AdditionalFeature';
+import AdditionalFeature from './AdditionalFeature';
 import { connect } from 'react-redux'
 
 
