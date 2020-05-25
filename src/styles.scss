@@ -1,5 +1,5 @@
 html, body, #root {
-  height: 100%;
+  height: auto;
 }
 body {
   background: #333;
@@ -8,16 +8,16 @@ body {
   padding: 3em;
   place-items: center;
 }
-.boxes {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
-  grid-template-rows: auto;
-}
+// .boxes {
+//   display: grid;
+//   grid-gap: 2em;
+//   grid-template-columns: repeat(2, minmax(350px, 1fr));
+//   grid-template-rows: auto;
+// }
 .box {
   display: flex;
   flex-direction: column;
-  height:29rem;
+  // height:29rem;
   h1 {
     font-size: 20px;
     margin: 0 0 1rem 0;
@@ -34,6 +34,7 @@ body {
     }
   }
 }
+
 .button {
   background: purple;
   border: 1px solid transparent;
