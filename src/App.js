@@ -13,8 +13,8 @@ const App = () => {
     // KufE7jT5GG3ybq89qHyNbrVPk4JGK2Xz
     axios
       .get(`https://marketcheck-prod.apigee.net/v2/search/car/active?api_key=KufE7jT5GG3ybq89qHyNbrVPk4JGK2Xz&zip=97267&car_type=used&year=2005&rows=100&start=0&facet_sort=count&country=US`)
-      // .then(res => console.log(res.data))
       .then(res => setUsedCars(res.data.listings))
+      // .then(res => console.log(res))
       .catch(error => {
         console.log("error", error);
       });
